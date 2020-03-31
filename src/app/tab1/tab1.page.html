@@ -1,17 +1,32 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
-  </ion-toolbar>
+<ion-header>
+    <ion-toolbar>
+        <ion-title color='danger'>
+            Pokemon
+        </ion-title>
+    </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+<ion-content fullscreen>
+    <ion-card style="text-align: center;">
+        <ion-img src="https://i.ya-webdesign.com/images/anime-png-15.png"></ion-img>
+        <ion-card-header>
+            <ion-card-subtitle>
+                <h1>Gotta catch 'em all!</h1>
+            </ion-card-subtitle>
+            <ion-card-title color="danger"> Pokemon</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <ion-button expand="full" color='danger' routerLink="/pokelist">
+                Pokemon List RouterLink
+            </ion-button>
+            <ion-button expand="full" color='danger' (click)="onClick()">
+                Pokemon navigateByUrl
+            </ion-button>
+            <ion-button expand="full" color='danger' href="./pokelist">
+                Pokemon List href
+            </ion-button>
+            The major problem using uref is that the whole page will get refreshed and hence we lose the entire state. I notice href only works while in localhost and even though when it works the transition of pages is not smooth and the back button is not there.
+            So, my advice is not to use href, instead use routerlink.
+        </ion-card-content>
+    </ion-card>
 </ion-content>

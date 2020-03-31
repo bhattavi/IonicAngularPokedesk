@@ -1,0 +1,29 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button color='danger'></ion-back-button>
+        </ion-buttons>
+        <ion-title color='danger'>Pokemon List</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <!-- Checkboxes in a List -->
+    <ion-list>
+        <ion-item *ngFor="let poke of pokemon">
+            <ion-avatar slot="start">
+                <ion-img [src]="image[poke.name]"></ion-img>
+            </ion-avatar>
+
+            <ion-label (click)="onClick(image[poke.name])">
+                <h2>{{ poke.name }}</h2>
+                <h3>Species: {{ poke.species }}</h3>
+                <p>Type: {{poke.type}}</p>
+
+
+
+            </ion-label>
+
+        </ion-item>
+    </ion-list>
+</ion-content>

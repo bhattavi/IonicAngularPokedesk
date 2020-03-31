@@ -1,17 +1,22 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 3
-    </ion-title>
-  </ion-toolbar>
+<ion-header>
+    <ion-toolbar>
+        <ion-title color='danger'>
+            Pokemon Cards
+        </ion-title>
+    </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content fullscreen>
+    <ion-card *ngFor="let item of pokemon">
+        <img [src]="image[item.name]" />
+        <ion-card-header>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+            <ion-card-title color='danger'>{{item.name}}</ion-card-title>
+            <ion-card-subtitle color='danger'>{{item.species}}</ion-card-subtitle>
+            <ion-card-subtitle color='danger'>Species: {{item.type}}</ion-card-subtitle>
+            <ion-card-subtitle color='danger'>Abilities: {{item.abilities}}</ion-card-subtitle>
+            <ion-card-subtitle color='danger'>Evolution: {{item.evolution}}</ion-card-subtitle>
+        </ion-card-header>
+
+    </ion-card>
 </ion-content>

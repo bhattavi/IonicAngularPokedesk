@@ -1,17 +1,24 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+<ion-header>
     <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
+        <ion-title color='danger'>
+            Favorite Pokemon
+        </ion-title>
     </ion-toolbar>
-  </ion-header>
+</ion-header>
+<ion-content>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+    <ion-button expand="block" color="danger" (click)="buttonPress()">Information</ion-button>
+
+    <ion-button expand="block" color="danger" (click)="getPokemonList()">Pokemon List</ion-button>
+
+    <!-- Checkboxes in a List -->
+    <ion-list>
+        <ion-item *ngFor="let item of pokemon">
+            <ion-thumbnail slot="start">
+                <ion-img [src]="img[item.name]"></ion-img>
+            </ion-thumbnail>
+            <ion-label>{{ item.name }}</ion-label>
+            <ion-checkbox color="danger" slot="end" [(ngModel)]="item.isChecked"></ion-checkbox>
+        </ion-item>
+    </ion-list>
 </ion-content>

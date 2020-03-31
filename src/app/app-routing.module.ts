@@ -5,6 +5,18 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+  },
+  {
+    path: 'pokelist',
+    loadChildren: () => import('./pokelist/pokelist.module').then( m => m.PokelistPageModule)
+  },
+  {
+    path: 'pokecards',
+    loadChildren: () => import('./pokecards/pokecards.module').then( m => m.PokecardsPageModule)
+  },
+  {
+    path: 'pokelist/:id',
+    loadChildren: () => import('./pokecards/pokecards.module').then( m => m.PokecardsPageModule)
   }
 ];
 @NgModule({
